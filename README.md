@@ -4,7 +4,6 @@ Portal de desarrollador diseñado para IBM API Connect con branding de Diners Cl
 
 ## 🌟 Características
 
-- **Diseño Moderno y Responsivo**: Interfaz atractiva con colores corporativos de Diners Club (azul marino y dorado)
 - **Documentación Interactiva**: 4 endpoints completamente documentados (2 GET y 2 POST) Ejemplo)
 - **API Playground**: Probador de APIs en vivo integrado
 - **Autenticación OAuth 2.0**: Documentación completa de autenticación
