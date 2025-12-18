@@ -179,29 +179,6 @@ El portal es completamente responsivo y funciona en:
 - JavaScript ES6+ (Vanilla JS)
 - Fuente: Inter (Google Fonts)
 
-## 📦 Próximas Mejoras
-
-- [ ] Integración con Swagger/OpenAPI
-- [ ] Sistema de autenticación real
-- [ ] Dashboard de métricas
-- [ ] Versionado de APIs
-- [ ] Modo oscuro
-- [ ] Internacionalización (i18n)
-- [ ] Rate limiting display
-- [ ] Webhooks documentation
-
-## 📄 Licencia
-
-Este proyecto es una plantilla para Diners Club y está destinado para uso interno.
-
-## 👥 Soporte
-
-Para soporte técnico o consultas:
-
-- 📧 Email: developers@dinersclub.com
-- 🌐 Portal: https://developer.dinersclub.com
-- 💬 Comunidad: https://community.dinersclub.com
-
 ## 🎯 API Connect Specifics
 
 ### Configuración de Producto
