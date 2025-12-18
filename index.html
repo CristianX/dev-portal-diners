@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diners Club Developer Portal - API Documentation</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="150" height="50" viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="150" height="50" rx="8" fill="#002B5B"/>
+                        <text x="15" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#D4AF37">DINERS CLUB</text>
+                    </svg>
+                </div>
+                <nav class="nav">
+                    <a href="#overview" class="nav-link active">Overview</a>
+                    <a href="#apis" class="nav-link">APIs</a>
+                    <a href="#authentication" class="nav-link">Authentication</a>
+                    <a href="#try-it" class="nav-link">Try It</a>
+                    <a href="#support" class="nav-link">Support</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn-secondary">Sign In</button>
+                    <button class="btn-primary">Get API Key</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Developer Portal</div>
+                <h1 class="hero-title">Diners Club API Platform</h1>
+                <p class="hero-subtitle">Integre servicios financieros premium en su aplicación con nuestras APIs RESTful seguras y confiables</p>
+                <div class="hero-actions">
+                    <button class="btn-primary btn-lg">Comenzar</button>
+                    <button class="btn-outline btn-lg">Ver Documentación</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">99.9%</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">190+</div>
+                        <div class="stat-label">Países</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">&lt;100ms</div>
+                        <div class="stat-label">Latencia</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Soporte</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <h2 class="section-title">¿Por qué Diners Club API?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Seguridad Robusta</h3>
+                    <p>Autenticación OAuth 2.0 y encriptación de extremo a extremo para todas las transacciones</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Alto Rendimiento</h3>
+                    <p>APIs optimizadas con respuestas en menos de 100ms y disponibilidad del 99.9%</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <div>Global Coverage</h3>
+                    <p>Procesamiento de transacciones en más de 190 países y territorios</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analytics en Tiempo Real</h3>
+                    <p>Dashboard completo con métricas, reportes y análisis de uso de APIs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APIs Section -->
+    <section id="apis" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Nuestras APIs</h2>
+            <p class="section-subtitle">APIs RESTful completas para gestionar cuentas, transacciones, pagos y más</p>
+            
+            <div class="api-categories">
+                <button class="category-btn active" data-category="all">Todas</button>
+                <button class="category-btn" data-category="get">GET Methods</button>
+                <button class="category-btn" data-category="post">POST Methods</button>
+            </div>
+
+            <div class="api-list">
+                <!-- GET Accounts -->
+                <div class="api-card" data-method="get">
+                    <div class="api-header">
+                        <div class="api-method get">GET</div>
+                        <div class="api-info">
+                            <h3 class="api-title">/api/v1/accounts</h3>
+                            <p class="api-description">Obtener listado de cuentas del usuario</p>
+                        </div>
+                        <button class="btn-expand" onclick="toggleApiDetails(this)">
+                            <span>Ver detalles</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 11L3 6h10l-5 5z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="api-details">
+                        <div class="api-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'request')">Request</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'response')">Response</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'example')">Ejemplo</button>
+                        </div>
+                        <div class="tab-content request active">
+                            <h4>Parámetros de Query</h4>
+                            <table class="params-table">
+                                <thead>
+                                    <tr>
+                                        <th>Parámetro</th>
+                                        <th>Tipo</th>
+                                        <th>Requerido</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>limit</code></td>
+                                        <td>integer</td>
+                                        <td>No</td>
+                                        <td>Número máximo de resultados (default: 10)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>offset</code></td>
+                                        <td>integer</td>
+                                        <td>No</td>
+                                        <td>Número de resultados a saltar (default: 0)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>status</code></td>
+                                        <td>string</td>
+                                        <td>No</td>
+                                        <td>Filtrar por estado: active, inactive, suspended</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4>Headers</h4>
+                            <pre><code>Authorization: Bearer {access_token}
+Content-Type: application/json</code></pre>
+                        </div>
+                        <div class="tab-content response">
+                            <h4>Response 200 OK</h4>
+                            <pre><code>{
+  "status": "success",
+  "data": {
+    "accounts": [
+      {
+        "accountId": "ACC-123456789",
+        "accountNumber": "************1234",
+        "accountType": "credit",
+        "status": "active",
+        "balance": 5000.00,
+        "currency": "USD",
+        "creditLimit": 10000.00,
+        "availableCredit": 5000.00,
+        "cardholderName": "Juan Pérez",
+        "expiryDate": "12/2027"
+      }
+    ],
+    "pagination": {
+      "total": 1,
+      "limit": 10,
+      "offset": 0
+    }
+  },
+  "timestamp": "2025-12-18T10:30:00Z"
+}</code></pre>
+                        </div>
+                        <div class="tab-content example">
+                            <h4>Ejemplo cURL</h4>
+                            <pre><code>curl -X GET "https://api.dinersclub.com/v1/accounts?limit=10&status=active" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/json"</code></pre>
+                            <button class="btn-copy" onclick="copyCode(this)">Copiar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GET Transactions -->
+                <div class="api-card" data-method="get">
+                    <div class="api-header">
+                        <div class="api-method get">GET</div>
+                        <div class="api-info">
+                            <h3 class="api-title">/api/v1/transactions</h3>
+                            <p class="api-description">Consultar transacciones realizadas</p>
+                        </div>
+                        <button class="btn-expand" onclick="toggleApiDetails(this)">
+                            <span>Ver detalles</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 11L3 6h10l-5 5z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="api-details">
+                        <div class="api-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'request')">Request</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'response')">Response</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'example')">Ejemplo</button>
+                        </div>
+                        <div class="tab-content request active">
+                            <h4>Parámetros de Query</h4>
+                            <table class="params-table">
+                                <thead>
+                                    <tr>
+                                        <th>Parámetro</th>
+                                        <th>Tipo</th>
+                                        <th>Requerido</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>accountId</code></td>
+                                        <td>string</td>
+                                        <td>Sí</td>
+                                        <td>ID de la cuenta</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>startDate</code></td>
+                                        <td>date</td>
+                                        <td>No</td>
+                                        <td>Fecha inicial (formato: YYYY-MM-DD)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>endDate</code></td>
+                                        <td>date</td>
+                                        <td>No</td>
+                                        <td>Fecha final (formato: YYYY-MM-DD)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>limit</code></td>
+                                        <td>integer</td>
+                                        <td>No</td>
+                                        <td>Número máximo de resultados (default: 20)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4>Headers</h4>
+                            <pre><code>Authorization: Bearer {access_token}
+Content-Type: application/json</code></pre>
+                        </div>
+                        <div class="tab-content response">
+                            <h4>Response 200 OK</h4>
+                            <pre><code>{
+  "status": "success",
+  "data": {
+    "transactions": [
+      {
+        "transactionId": "TXN-987654321",
+        "accountId": "ACC-123456789",
+        "amount": 150.00,
+        "currency": "USD",
+        "type": "purchase",
+        "status": "completed",
+        "merchant": {
+          "name": "Amazon",
+          "category": "E-commerce",
+          "location": "Online"
+        },
+        "transactionDate": "2025-12-17T15:45:00Z",
+        "description": "Purchase at Amazon"
+      },
+      {
+        "transactionId": "TXN-987654320",
+        "accountId": "ACC-123456789",
+        "amount": 45.99,
+        "currency": "USD",
+        "type": "purchase",
+        "status": "completed",
+        "merchant": {
+          "name": "Starbucks",
+          "category": "Food & Beverage",
+          "location": "Quito, Ecuador"
+        },
+        "transactionDate": "2025-12-16T09:30:00Z",
+        "description": "Purchase at Starbucks"
+      }
+    ],
+    "pagination": {
+      "total": 2,
+      "limit": 20,
+      "offset": 0
+    }
+  },
+  "timestamp": "2025-12-18T10:30:00Z"
+}</code></pre>
+                        </div>
+                        <div class="tab-content example">
+                            <h4>Ejemplo cURL</h4>
+                            <pre><code>curl -X GET "https://api.dinersclub.com/v1/transactions?accountId=ACC-123456789&limit=20" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/json"</code></pre>
+                            <button class="btn-copy" onclick="copyCode(this)">Copiar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POST Payments -->
+                <div class="api-card" data-method="post">
+                    <div class="api-header">
+                        <div class="api-method post">POST</div>
+                        <div class="api-info">
+                            <h3 class="api-title">/api/v1/payments</h3>
+                            <p class="api-description">Procesar un nuevo pago</p>
+                        </div>
+                        <button class="btn-expand" onclick="toggleApiDetails(this)">
+                            <span>Ver detalles</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 11L3 6h10l-5 5z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="api-details">
+                        <div class="api-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'request')">Request</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'response')">Response</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'example')">Ejemplo</button>
+                        </div>
+                        <div class="tab-content request active">
+                            <h4>Request Body</h4>
+                            <pre><code>{
+  "accountId": "string (required)",
+  "amount": "number (required)",
+  "currency": "string (required)",
+  "description": "string (optional)",
+  "recipient": {
+    "name": "string (required)",
+    "accountNumber": "string (required)",
+    "bankCode": "string (required)"
+  },
+  "metadata": {
+    "orderId": "string (optional)",
+    "customerId": "string (optional)"
+  }
+}</code></pre>
+                            <h4>Headers</h4>
+                            <pre><code>Authorization: Bearer {access_token}
+Content-Type: application/json
+X-Idempotency-Key: {unique_key}</code></pre>
+                        </div>
+                        <div class="tab-content response">
+                            <h4>Response 201 Created</h4>
+                            <pre><code>{
+  "status": "success",
+  "data": {
+    "paymentId": "PAY-456789123",
+    "accountId": "ACC-123456789",
+    "amount": 500.00,
+    "currency": "USD",
+    "status": "pending",
+    "description": "Payment to supplier",
+    "recipient": {
+      "name": "Acme Corp",
+      "accountNumber": "************5678",
+      "bankCode": "BANK001"
+    },
+    "createdAt": "2025-12-18T10:30:00Z",
+    "estimatedCompletionTime": "2025-12-18T10:35:00Z",
+    "fees": {
+      "amount": 5.00,
+      "currency": "USD"
+    }
+  },
+  "timestamp": "2025-12-18T10:30:00Z"
+}</code></pre>
+                            <h4>Response 400 Bad Request</h4>
+                            <pre><code>{
+  "status": "error",
+  "error": {
+    "code": "INVALID_REQUEST",
+    "message": "Invalid account ID provided",
+    "details": [
+      {
+        "field": "accountId",
+        "message": "Account ID must be a valid format"
+      }
+    ]
+  },
+  "timestamp": "2025-12-18T10:30:00Z"
+}</code></pre>
+                        </div>
+                        <div class="tab-content example">
+                            <h4>Ejemplo cURL</h4>
+                            <pre><code>curl -X POST "https://api.dinersclub.com/v1/payments" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -H "X-Idempotency-Key: unique-key-123" \
+  -d '{
+    "accountId": "ACC-123456789",
+    "amount": 500.00,
+    "currency": "USD",
+    "description": "Payment to supplier",
+    "recipient": {
+      "name": "Acme Corp",
+      "accountNumber": "9876543210",
+      "bankCode": "BANK001"
+    }
+  }'</code></pre>
+                            <button class="btn-copy" onclick="copyCode(this)">Copiar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POST Card Application -->
+                <div class="api-card" data-method="post">
+                    <div class="api-header">
+                        <div class="api-method post">POST</div>
+                        <div class="api-info">
+                            <h3 class="api-title">/api/v1/cards/application</h3>
+                            <p class="api-description">Solicitud de nueva tarjeta</p>
+                        </div>
+                        <button class="btn-expand" onclick="toggleApiDetails(this)">
+                            <span>Ver detalles</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 11L3 6h10l-5 5z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="api-details">
+                        <div class="api-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'request')">Request</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'response')">Response</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'example')">Ejemplo</button>
+                        </div>
+                        <div class="tab-content request active">
+                            <h4>Request Body</h4>
+                            <pre><code>{
+  "cardType": "string (required) - classic, gold, platinum",
+  "applicant": {
+    "firstName": "string (required)",
+    "lastName": "string (required)",
+    "email": "string (required)",
+    "phone": "string (required)",
+    "dateOfBirth": "string (required) - YYYY-MM-DD",
+    "nationalId": "string (required)"
+  },
+  "address": {
+    "street": "string (required)",
+    "city": "string (required)",
+    "state": "string (required)",
+    "country": "string (required)",
+    "postalCode": "string (required)"
+  },
+  "employment": {
+    "status": "string (required) - employed, self-employed, retired",
+    "income": "number (required)",
+    "employer": "string (optional)"
+  }
+}</code></pre>
+                            <h4>Headers</h4>
+                            <pre><code>Authorization: Bearer {access_token}
+Content-Type: application/json</code></pre>
+                        </div>
+                        <div class="tab-content response">
+                            <h4>Response 201 Created</h4>
+                            <pre><code>{
+  "status": "success",
+  "data": {
+    "applicationId": "APP-789456123",
+    "cardType": "gold",
+    "status": "under_review",
+    "applicant": {
+      "firstName": "Juan",
+      "lastName": "Pérez",
+      "email": "juan.perez@example.com"
+    },
+    "submittedAt": "2025-12-18T10:30:00Z",
+    "estimatedDecisionDate": "2025-12-20T10:30:00Z",
+    "nextSteps": [
+      "Verificación de identidad",
+      "Evaluación crediticia",
+      "Aprobación final"
+    ],
+    "requiredDocuments": [
+      "Copia de cédula",
+      "Comprobante de ingresos"
+    ]
+  },
+  "timestamp": "2025-12-18T10:30:00Z"
+}</code></pre>
+                        </div>
+                        <div class="tab-content example">
+                            <h4>Ejemplo cURL</h4>
+                            <pre><code>curl -X POST "https://api.dinersclub.com/v1/cards/application" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "cardType": "gold",
+    "applicant": {
+      "firstName": "Juan",
+      "lastName": "Pérez",
+      "email": "juan.perez@example.com",
+      "phone": "+593987654321",
+      "dateOfBirth": "1990-05-15",
+      "nationalId": "1234567890"
+    },
+    "address": {
+      "street": "Av. Amazonas 123",
+      "city": "Quito",
+      "state": "Pichincha",
+      "country": "Ecuador",
+      "postalCode": "170150"
+    },
+    "employment": {
+      "status": "employed",
+      "income": 3000,
+      "employer": "Tech Corp"
+    }
+  }'</code></pre>
+                            <button class="btn-copy" onclick="copyCode(this)">Copiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authentication Section -->
+    <section id="authentication" class="section">
+        <div class="container">
+            <h2 class="section-title">Autenticación</h2>
+            <div class="auth-content">
+                <div class="auth-info">
+                    <h3>OAuth 2.0</h3>
+                    <p>Todas las APIs de Diners Club utilizan OAuth 2.0 para autenticación y autorización. Necesitarás obtener un access token antes de realizar llamadas a la API.</p>
+                    
+                    <h4>Pasos para autenticarse:</h4>
+                    <ol class="auth-steps">
+                        <li>Registre su aplicación en el portal de desarrolladores</li>
+                        <li>Obtenga su Client ID y Client Secret</li>
+                        <li>Solicite un access token usando las credenciales</li>
+                        <li>Use el token en el header Authorization de sus requests</li>
+                    </ol>
+
+                    <div class="code-block">
+                        <h4>Obtener Access Token</h4>
+                        <pre><code>curl -X POST "https://api.dinersclub.com/oauth/token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=client_credentials" \
+  -d "client_id=YOUR_CLIENT_ID" \
+  -d "client_secret=YOUR_CLIENT_SECRET"</code></pre>
+                    </div>
+
+                    <div class="code-block">
+                        <h4>Response</h4>
+                        <pre><code>{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "token_type": "Bearer",
+  "expires_in": 3600,
+  "scope": "read write"
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="auth-sidebar">
+                    <div class="info-box">
+                        <h4>🔑 API Keys</h4>
+                        <p>Administre sus API keys desde el dashboard de desarrolladores</p>
+                        <button class="btn-primary btn-block">Ir al Dashboard</button>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4>📚 Guías</h4>
+                        <ul class="link-list">
+                            <li><a href="#">Guía de inicio rápido</a></li>
+                            <li><a href="#">Mejores prácticas de seguridad</a></li>
+                            <li><a href="#">Manejo de errores</a></li>
+                            <li><a href="#">Rate limiting</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Try It Section -->
+    <section id="try-it" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Prueba la API</h2>
+            <p class="section-subtitle">Realiza llamadas en vivo a nuestras APIs directamente desde el navegador</p>
+            
+            <div class="api-playground">
+                <div class="playground-header">
+                    <select id="endpoint-select" class="endpoint-select">
+                        <option value="get-accounts">GET /api/v1/accounts</option>
+                        <option value="get-transactions">GET /api/v1/transactions</option>
+                        <option value="post-payments">POST /api/v1/payments</option>
+                        <option value="post-cards">POST /api/v1/cards/application</option>
+                    </select>
+                    <div class="environment-toggle">
+                        <label>
+                            <input type="radio" name="env" value="sandbox" checked>
+                            <span>Sandbox</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="env" value="production">
+                            <span>Production</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="playground-content">
+                    <div class="request-panel">
+                        <h4>Request</h4>
+                        <div class="form-group">
+                            <label>Authorization Token</label>
+                            <input type="text" class="form-input" id="auth-token" placeholder="Bearer YOUR_ACCESS_TOKEN">
+                        </div>
+                        <div class="form-group">
+                            <label>Request Body (para POST)</label>
+                            <textarea class="form-textarea" id="request-body" rows="10" placeholder='{\n  "key": "value"\n}'></textarea>
+                        </div>
+                        <button class="btn-primary" onclick="sendTestRequest()">
+                            <span>Enviar Request</span>
+                        </button>
+                    </div>
+
+                    <div class="response-panel">
+                        <h4>Response</h4>
+                        <div class="response-status" id="response-status">
+                            <span>Status: -</span>
+                            <span>Time: -</span>
+                        </div>
+                        <pre id="response-output"><code>Esperando request...</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="section">
+        <div class="container">
+            <h2 class="section-title">Soporte y Recursos</h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon">📖</div>
+                    <h3>Documentación</h3>
+                    <p>Guías completas, referencias de API y tutoriales paso a paso</p>
+                    <a href="#" class="link-arrow">Ver documentación →</a>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">💬</div>
+                    <h3>Comunidad</h3>
+                    <p>Conéctate con otros desarrolladores y comparte experiencias</p>
+                    <a href="#" class="link-arrow">Unirse a la comunidad →</a>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">🎫</div>
+                    <h3>Soporte Técnico</h3>
+                    <p>Asistencia 24/7 para problemas técnicos y consultas</p>
+                    <a href="#" class="link-arrow">Contactar soporte →</a>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">📊</div>
+                    <h3>Status de API</h3>
+                    <p>Monitoreo en tiempo real del estado de nuestros servicios</p>
+                    <a href="#" class="link-arrow">Ver status →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <svg width="150" height="50" viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="150" height="50" rx="8" fill="#D4AF37"/>
+                            <text x="15" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#002B5B">DINERS CLUB</text>
+                        </svg>
+                    </div>
+                    <p class="footer-text">Conectando desarrolladores con servicios financieros premium desde 1950</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Desarrolladores</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentación</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">SDKs</a></li>
+                        <li><a href="#">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Tutoriales</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Soporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centro de Ayuda</a></li>
+                        <li><a href="#">API Status</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Seguridad</a></li>
+                        <li><a href="#">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Diners Club International Ltd. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="#" aria-label="Twitter">Twitter</a>
+                    <a href="#" aria-label="GitHub">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
